@@ -1,4 +1,4 @@
-SET sql_safe_updates = 0;
+-- SET sql_safe_updates = 0;
 
 USE db;
 
@@ -17,10 +17,9 @@ DELETE FROM warengruppe WHERE gruppenName = 'Gebäude';
 SELECT * FROM warengruppe;
 
 -- i) (artikelName könnte als Primary Key verwendet werden)
-INSERT INTO artikel (idArtikel, Warengruppe_gruppenName, artikelName, beschreibung, skalierung, lieferant, lagerBestand, preisEk, preisListe) VALUES (
-    123,  -- idArtikel
-    'Figuren',  -- Warengruppe_gruppenName
+INSERT INTO artikel (artikelName, Warengruppe_gruppenName, beschreibung, skalierung, lieferant, lagerBestand, preisEk, preisListe) VALUES (
     'Soldat Figur WWII',  -- artikeName
+    'Figuren',  -- Warengruppe_gruppenName
     'Detaillierte Figur eines amerikanischen Soldaten im Zweiten Weltkrieg.',  -- beschreibung
     '1:10',  -- skalierung
     'Herpa',  -- lieferant
@@ -28,6 +27,7 @@ INSERT INTO artikel (idArtikel, Warengruppe_gruppenName, artikelName, beschreibu
     4.50,  -- preisEk
     9.99  -- preisListe
 );
+SELECT * FROM artikel;
 
 -- j)
 -- Lösche alle Artikel in der Warengruppe "Figuren"
